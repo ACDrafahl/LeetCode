@@ -9,7 +9,7 @@ class Solution {
 
         for(int i = 0; i < s.length(); i++) {
             if(vowels.contains(s.charAt(i))) {
-                hasVowels = true; //should be a way to avoid so many reassignments here
+                hasVowels = true; 
                 vowelIndices.add(i);
             }
         }
