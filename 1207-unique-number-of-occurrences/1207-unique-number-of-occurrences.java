@@ -15,7 +15,7 @@ class Solution {
         //O(n) for HashSet, O(n) for values()
         Set<Integer> uniqueValues = new HashSet<>(occurences.values());
 
-        //O(n) for values()
+        //O(1) for values()
         return uniqueValues.size() == occurences.values().size();
     }
 }
