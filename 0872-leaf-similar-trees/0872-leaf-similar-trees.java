@@ -20,8 +20,6 @@ class Solution {
         Stack<TreeNode> tree2 = new Stack<>();
         ArrayList<Integer> values1 = new ArrayList<>();
         ArrayList<Integer> values2 = new ArrayList<>();
-        int size1 = 0;
-        int size2 = 0;
 
         tree1.push(root1);
         tree2.push(root2);
