@@ -16,6 +16,7 @@
 class Solution {
     public TreeNode searchBST(TreeNode root, int val) {
         //Recursive solution
+        //O(logn) average, O(n) worst
         if(val == root.val) { //base case
             return root;
         }
