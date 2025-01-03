@@ -13,14 +13,20 @@ class MyCircularQueue {
         queueSize = k;
         numElements = 0;
         front_p = 0;
-        rear_p = -1; //Start at -1 since it will be immediately incremented
+        rear_p = -1; // Start at -1 since it will be immediately incremented
     }
     
     // Return true if the element was added successfully
     public boolean enQueue(int value) {
         if (!isFull()) {
             rear_p = (rear_p + 1) % queueSize;
-            queue.add(rear_p, value);
+            if (rear_p >= queue.size()) {
+                queue.add(value);  // Add the new element
+            }
+            else {
+                queue.set(rear_p, value);
+            }
+            
             numElements++;
             return true;
         }
@@ -30,7 +36,6 @@ class MyCircularQueue {
     // Return true if the element was removed successfully
     public boolean deQueue() {
         if (!isEmpty()) {
-            
             front_p = (front_p + 1) % queueSize;
             numElements--;
             return true;
