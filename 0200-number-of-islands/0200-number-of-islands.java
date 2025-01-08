@@ -53,44 +53,39 @@ class Solution {
             Pair currentNode = nodeQueue.poll();
             int row = currentNode.row;
             int col = currentNode.col;
-            Pair neighbor = new Pair(row, col);
 
             visited.add(currentNode);
 
             // Checking above
             if (row - 1 > -1 && grid[row - 1][col] == '1') {
-                neighbor.row = row - 1;
-                neighbor.col = col;
+                Pair neighbor = new Pair(row - 1, col);
                 if (!visited.contains(neighbor)) {
-                    nodeQueue.add(new Pair(row - 1, col));
-                    visited.add(new Pair(row - 1, col));
+                    nodeQueue.add(neighbor);
+                    visited.add(neighbor);
                 }
             }
             // Checking below
             if (row + 1 < m && grid[row + 1][col] == '1') {
-                neighbor.row = row + 1;
-                neighbor.col = col;
+                Pair neighbor = new Pair(row + 1, col);
                 if (!visited.contains(neighbor)) {
-                    nodeQueue.add(new Pair(row + 1, col));
-                    visited.add(new Pair(row + 1, col));
+                    nodeQueue.add(neighbor);
+                    visited.add(neighbor);
                 }
             }
             // Checking to the left
             if (col - 1 > -1 && grid[row][col - 1] == '1') {
-                neighbor.row = row;
-                neighbor.col = col - 1;
+                Pair neighbor = new Pair(row, col - 1);
                 if (!visited.contains(neighbor)) {
-                    nodeQueue.add(new Pair(row, col - 1));
-                    visited.add(new Pair(row, col - 1));
+                    nodeQueue.add(neighbor);
+                    visited.add(neighbor);
                 }
             }
             // Checking to the right
             if (col + 1 < n && grid[row][col + 1] == '1') {
-                neighbor.row = row;
-                neighbor.col = col + 1;
+                Pair neighbor = new Pair(row, col + 1);
                 if (!visited.contains(neighbor)) {
-                    nodeQueue.add(new Pair(row, col + 1));
-                    visited.add(new Pair(row, col + 1));
+                    nodeQueue.add(neighbor);
+                    visited.add(neighbor);
                 }
             }
         };
