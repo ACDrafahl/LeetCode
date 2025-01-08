@@ -1,32 +1,3 @@
-
-        // System.out.println("m = " + m + " n = " + n);
-
-        // for (int i = 0; i < m; i++) {
-        //     for (int j = 0; j < n; j++) {
-        //         nodeQueue.add(new Pair(i, j));
-        //         visited.add(new Pair(i, j));
-        //     }
-        // }
-
-        // // Adding three of the "same" item to make sure the hash set is working
-        // visited.add(new Pair(1,1));
-        // visited.add(new Pair(1,1));
-        // visited.add(new Pair(1,1));
-
-        // System.out.println("Queue: " + nodeQueue);
-        // System.out.println("HashSet" + visited);
-
-        // // Test if the hashset and queue are adding properly
-        // for (int p = 0; p < 5; p++) {
-        //     // If the pair isn't in the visited set,
-        //     if (visited.add(new Pair(1, 1))) {
-        //         // add it to the queue
-        //         nodeQueue.add(new Pair(1, 1));
-        //     }
-        // }
-        // System.out.println("Queue:    " + nodeQueue);
-        // System.out.println("HashSet : " + visited);
-
 class Solution {
     static class Pair {
         int row;
@@ -63,9 +34,6 @@ class Solution {
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 Pair currentNode = new Pair(i, j);
-                System.out.println();
-                System.out.println("Checking node: " + currentNode);
-                System.out.println("Not in visited: " + (!visited.contains(currentNode)));
                 // If the character is 1 and the pair isn't in the visited set
                 if (grid[i][j] == '1' && !visited.contains(currentNode)) {
                     // Add it to the queue, then run BFS on it
@@ -82,16 +50,11 @@ class Solution {
     public void BFS(char[][] grid, Queue<Pair> nodeQueue, HashSet<Pair> visited, int m, int n) {
         int c = 0;
         while (!nodeQueue.isEmpty()) {
-            System.out.println("Step " + ++c + " queue: " + nodeQueue);
             Pair currentNode = nodeQueue.poll();
             int row = currentNode.row;
             int col = currentNode.col;
 
             visited.add(currentNode);
-
-            
-            System.out.println("Step " + c + " visted: " + visited);
-            //System.out.println("currentNode: " + currentNode + ", row: " + row + ", col: " + col);
 
             // Checking above
             if (row - 1 > -1 && grid[row - 1][col] == '1') {
