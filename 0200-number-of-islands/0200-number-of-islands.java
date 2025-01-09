@@ -48,7 +48,6 @@ class Solution {
     }
 
     public void BFS(char[][] grid, Queue<Pair> nodeQueue, HashSet<Pair> visited, int m, int n) {
-        int c = 0;
         Pair currentNode;
         while (!nodeQueue.isEmpty()) {
             currentNode = nodeQueue.poll();
